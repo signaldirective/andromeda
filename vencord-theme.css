@@ -1,0 +1,471 @@
+/*
+* @name Real Andromeda
+* @author @signaldirective
+* @version 0.1.0
+* @description Andromeda theme for Vencord
+**/
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Andromeda palette */
+    --color00: #000000;
+    --color01: #f92672;
+    --color02: #00e8c6;
+    --color03: #ffe66d;
+    --color04: #7cb7ff;
+    --color05: #c74ded;
+    --color06: #96e072;
+    --color07: #e5e5e5;
+    --color08: #666666;
+    --color09: #ee5d43;
+    --color10: #96e072;
+    --color11: #f39c12;
+    --color12: #7cb7ff;
+    --color13: #ff00aa;
+    --color14: #00e8c6;
+    --color15: #e5e5e5;
+  /* UI surfaces */
+  --eh-0: #16161c;
+  --eh-1: #1c1e26;
+  --eh-2: #232530;
+  --eh-3: #2e303e;
+  --eh-4: #7AB4FA;
+  --eh-border: color-mix(in srgb, var(--eh-4) 45%, transparent);
+  --eh-gap: 12px;
+
+  /* Accent */
+  --eh-accent: var(--color02);
+  --eh-accent-strong: var(--color13);
+  --eh-danger: var(--color01);
+  --eh-accent-dim: color-mix(in srgb, var(--eh-accent) 55%, var(--eh-1));
+
+  /* Typography */
+  --font-primary: "Figtree", "gg sans", sans-serif;
+  --font-display: "Figtree", "gg sans", sans-serif;
+  --eh-letter-spacing: 0.35px;
+}
+
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh {
+  /* Backgrounds */
+  --background-primary: var(--eh-1) !important;
+  --background-secondary: var(--eh-0) !important;
+  --background-secondary-alt: var(--eh-1) !important;
+  --background-tertiary: var(--eh-0) !important;
+  --background-accent: var(--eh-2) !important;
+  --background-floating: var(--eh-2) !important;
+
+  --background-base-lowest: var(--eh-0) !important;
+  --background-base-lower: var(--eh-0) !important;
+  --background-base-low: var(--eh-1) !important;
+  --background-base-tertiary: var(--eh-0) !important;
+
+  --background-surface-high: var(--eh-2) !important;
+  --background-surface-higher: var(--eh-2) !important;
+  --background-surface-highest: var(--eh-3) !important;
+  --bg-surface-raised: var(--eh-2) !important;
+  --bg-surface-overlay: var(--eh-1) !important;
+  --bg-base-secondary: var(--eh-0) !important;
+  --bg-base-tertiary: var(--eh-0) !important;
+  --bg-overlay-2: var(--eh-2) !important;
+  --bg-overlay-3: var(--eh-3) !important;
+
+  /* Modifiers */
+  --background-modifier-accent: color-mix(in srgb, var(--eh-3) 65%, transparent) !important;
+  --background-modifier-hover: color-mix(in srgb, var(--eh-3) 70%, transparent) !important;
+  --background-modifier-active: color-mix(in srgb, var(--eh-3) 82%, transparent) !important;
+  --background-modifier-selected: color-mix(in srgb, var(--eh-3) 90%, transparent) !important;
+  --background-mentioned: linear-gradient(90deg, color-mix(in srgb, var(--color03) 22%, var(--eh-1)) 0%, var(--eh-1) 100%) !important;
+  --background-mentioned-hover: linear-gradient(90deg, color-mix(in srgb, var(--color03) 32%, var(--eh-1)) 0%, var(--eh-1) 100%) !important;
+  --mention-background: linear-gradient(90deg, color-mix(in srgb, var(--color03) 28%, var(--eh-1)) 0%, var(--eh-1) 100%) !important;
+  --mention-foreground: var(--color07) !important;
+
+  /* Text */
+  --text-normal: var(--color07) !important;
+  --text-muted: var(--eh-4) !important;
+  --text-primary: var(--color07) !important;
+  --text-secondary: color-mix(in srgb, var(--color07) 75%, var(--eh-4)) !important;
+  --header-primary: var(--color07) !important;
+  --header-secondary: color-mix(in srgb, var(--color07) 75%, var(--eh-4)) !important;
+  --interactive-normal: var(--color07) !important;
+  --interactive-hover: var(--color15) !important;
+  --interactive-active: var(--color15) !important;
+  --interactive-muted: var(--eh-4) !important;
+
+  /* Accents */
+  --brand-500: var(--eh-accent) !important;
+  --brand-560: color-mix(in srgb, var(--eh-accent) 18%, var(--eh-1)) !important;
+  --text-link: var(--eh-accent) !important;
+  --channel-icon: var(--eh-accent) !important;
+  --focus-primary: var(--color13) !important;
+  --input-border-focus: var(--color13) !important;
+
+  /* Buttons */
+  --button-filled-brand-background: color-mix(in srgb, var(--eh-accent) 65%, var(--eh-1)) !important;
+  --button-filled-brand-background-hover: color-mix(in srgb, var(--eh-accent) 75%, var(--eh-1)) !important;
+  --button-filled-brand-text: var(--eh-1) !important;
+
+  --button-positive-background: color-mix(in srgb, var(--eh-accent) 65%, var(--eh-1)) !important;
+  --button-positive-background-hover: color-mix(in srgb, var(--eh-accent) 75%, var(--eh-1)) !important;
+  --button-positive-text: var(--eh-1) !important;
+
+  --button-secondary-background: var(--eh-3) !important;
+  --button-secondary-background-hover: var(--eh-2) !important;
+  --button-secondary-text: var(--color07) !important;
+
+  --button-danger-background: var(--eh-danger) !important;
+  --button-danger-background-hover: color-mix(in srgb, var(--eh-danger) 85%, white) !important;
+  --button-danger-text: var(--eh-1) !important;
+
+  /* Status */
+  --status-positive: var(--eh-accent) !important;
+  --status-warning: var(--color03) !important;
+  --status-danger: var(--eh-danger) !important;
+}
+
+body {
+  letter-spacing: var(--eh-letter-spacing);
+}
+
+/*--- Username Color ---*/
+[class*="username"] {
+  color: #03E4C4 !important;
+}
+
+/*--- Channel Row Accents ---*/
+a[data-list-item-id^="channels___"][aria-selected="true"] {
+  background-color: var(--background-modifier-selected) !important;
+  box-shadow: inset 3px 0 0 0 var(--eh-accent) !important;
+  border-radius: 10px !important;
+}
+
+a[data-list-item-id^="channels___"]:hover {
+  background-color: var(--background-modifier-hover) !important;
+  box-shadow: inset 3px 0 0 0 var(--eh-danger) !important;
+  border-radius: 10px !important;
+}
+
+/*--- Channel Icon Base ---*/
+a[data-list-item-id^="channels___"] svg,
+a[data-list-item-id^="channels___"] svg path {
+  fill: var(--eh-accent-dim) !important;
+  color: var(--eh-accent-dim) !important;
+}
+
+/*--- Unread Channel Icon ---*/
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg,
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg path {
+  fill: var(--eh-accent) !important;
+  color: var(--eh-accent) !important;
+}
+
+[class*="modeUnread"] [class*="icon__"],
+[class*="modeUnread"] [class*="icon__"] path {
+  fill: var(--eh-accent) !important;
+  color: var(--eh-accent) !important;
+}
+
+/*--- Text Input Focus Ring ---*/
+[class*="channelTextArea"]:focus-within {
+  box-shadow: 0 0 0 1px var(--color13) inset !important;
+  border-color: var(--color13) !important;
+}
+
+[class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/*--- Post Style Input Padding ---*/
+[class*="textAreaForPostCreation"] {
+  padding: 8px 10px !important;
+  box-sizing: border-box !important;
+}
+
+/*--- Post Media Button Spacing ---*/
+[class*="container__94439"] {
+  margin-left: 8px !important;
+}
+
+/*--- Mention Highlight ---*/
+div[class*="mentioned"],
+li[class*="mentioned"] {
+  background: var(--background-mentioned) !important;
+  box-shadow: none !important;
+  border-left: 3px solid var(--eh-accent) !important;
+  border-radius: 10px !important;
+  position: relative;
+}
+
+div[class*="mentioned"]:hover,
+li[class*="mentioned"]:hover {
+  background: var(--background-mentioned-hover) !important;
+}
+
+div[class*="mentioned"]::before,
+li[class*="mentioned"]::before {
+  content: none !important;
+}
+
+/*--- Replying Highlight ---*/
+div[class*="replying"],
+li[class*="replying"] {
+  background: var(--background-mentioned) !important;
+  box-shadow: none !important;
+  border-left: 3px solid var(--color12) !important;
+  border-radius: 10px !important;
+  position: relative;
+}
+
+div[class*="replying"]:hover,
+li[class*="replying"]:hover {
+  background: var(--background-mentioned-hover) !important;
+}
+
+div[class*="replying"]::before,
+li[class*="replying"]::before {
+  content: none !important;
+}
+
+/*--- Message Hover Round ---*/
+[id^="chat-messages-"] [class*="messageListItem"]:hover,
+[id^="chat-messages-"] [class*="messageListItem"]:hover > [class*="message"],
+[id^="chat-messages-"] [class*="messageListItem"]:hover [class*="contents"] {
+  background: var(--background-modifier-hover) !important;
+  border-radius: 10px !important;
+}
+
+/*--- Panel Separation ---*/
+[class*="sidebar"] [class*="sidebarList"],
+[class*="chatContent"] {
+  background-color: var(--eh-0) !important;
+  border: 1px solid var(--eh-border) !important;
+  border-radius: 14px !important;
+}
+
+[class*="sidebar"] {
+  margin: 0 var(--eh-gap) var(--eh-gap) var(--eh-gap) !important;
+}
+
+[class*="chatContent"] {
+  margin: 0 var(--eh-gap) var(--eh-gap) 0 !important;
+  overflow: hidden !important;
+}
+/*--- Unread Indicators & Badges ---*/
+div[class*="unreadBar"],
+span[class*="unreadBar"],
+div[class*="unreadPill"],
+span[class*="unreadPill"],
+div[class*="numberBadge"],
+span[class*="numberBadge"],
+div[class*="textBadge"],
+span[class*="textBadge"],
+div.unread__2ea32.unreadImportant__2ea32 {
+  background-color: var(--color13) !important;
+  color: var(--eh-1) !important;
+}
+
+/*--- New Messages Bar (scoped) ---*/
+div#---new-messages-bar.divider__5126c {
+  --divider-color: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__5126c.hasContent__5126c {
+  background:
+    linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--color12) 35%, transparent) 20%, color-mix(in srgb, var(--color12) 35%, transparent) 70%, transparent 84%, transparent 100%) !important;
+  border-radius: 12px !important;
+  padding: 4px 54px 4px 10px !important;
+  margin: 14px 0 6px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 {
+  --divider-color: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .content__908e2 {
+  background: color-mix(in srgb, var(--eh-1) 85%, var(--color12) 15%) !important;
+  border: 1px solid color-mix(in srgb, var(--color12) 55%, transparent) !important;
+  color: var(--color12) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color12) 25%, transparent), 0 6px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPill__908e2 {
+  background-image: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--color05) 55%, var(--eh-1)) 0%,
+    color-mix(in srgb, var(--color12) 55%, var(--eh-1)) 50%,
+    color-mix(in srgb, var(--color02) 45%, var(--eh-1)) 100%
+  ) !important;
+  color: var(--color07) !important;
+  border: 1px solid color-mix(in srgb, var(--color12) 55%, transparent) !important;
+  border-radius: 999px !important;
+  padding: 0 8px !important;
+  height: 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 10px !important;
+  transform: translateY(1px) !important;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color05) 35%, transparent),
+    0 0 12px color-mix(in srgb, var(--color05) 25%, transparent),
+    0 6px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPillCapStroke__908e2 {
+  stroke: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPillCap__908e2,
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPillCap__908e2 path {
+  fill: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+  color: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+  stroke: color-mix(in srgb, var(--color12) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPillCap__908e2,
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .unreadPillCap__908e2 * {
+  display: none !important;
+}
+
+
+/*--- Unread Mentions Footer Pill ---*/
+div[class*="unreadMentionsIndicatorBottom"] > div {
+  background-color: var(--color13) !important;
+  color: var(--eh-1) !important;
+}
+
+/*--- Jump To Present / New Messages Pill ---*/
+button[class*="jumpToPresentBar"],
+div[class*="jumpToPresentBar"] {
+  background: var(--color13) !important;
+  color: var(--eh-1) !important;
+  border-color: var(--color13) !important;
+}
+
+/*--- Mention Count Pills ---*/
+span[class*="mention"],
+span[class*="mention"] span {
+  background-color: var(--color13) !important;
+  color: var(--eh-1) !important;
+}
+
+/*--- Inline @mention Pills ---*/
+.theme-dark :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.theme-darker :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.theme-midnight :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.visual-refresh :is([class*="messageContent"], [class*="markup"]) [class*="mention"] {
+  background-image: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--color05) 55%, var(--eh-1)) 0%,
+    color-mix(in srgb, var(--color12) 55%, var(--eh-1)) 50%,
+    color-mix(in srgb, var(--color02) 45%, var(--eh-1)) 100%
+  ) !important;
+  color: var(--color07) !important;
+  border: 1px solid color-mix(in srgb, var(--color12) 55%, transparent) !important;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color05) 35%, transparent),
+    0 0 12px color-mix(in srgb, var(--color05) 25%, transparent) !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1.4 !important;
+  padding: 0.12em 0.55em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  vertical-align: baseline !important;
+  text-shadow: 0 0 6px color-mix(in srgb, var(--color12) 40%, transparent) !important;
+}
+
+.theme-dark :is([class*="messageContent"], [class*="markup"]) [class*="mention"]:hover,
+.theme-darker :is([class*="messageContent"], [class*="markup"]) [class*="mention"]:hover,
+.theme-midnight :is([class*="messageContent"], [class*="markup"]) [class*="mention"]:hover,
+.visual-refresh :is([class*="messageContent"], [class*="markup"]) [class*="mention"]:hover {
+  background-image: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--color05) 70%, var(--eh-1)) 0%,
+    color-mix(in srgb, var(--color12) 70%, var(--eh-1)) 50%,
+    color-mix(in srgb, var(--color02) 60%, var(--eh-1)) 100%
+  ) !important;
+  border-color: color-mix(in srgb, var(--color12) 75%, transparent) !important;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color05) 55%, transparent),
+    0 0 16px color-mix(in srgb, var(--color05) 45%, transparent) !important;
+}
+
+/*--- Server Unread Indicator ---*/
+div.pill_e5445c.wrapper__58105 > span.item__58105 {
+  background-color: var(--color13) !important;
+  border-radius: 999px !important;
+}
+
+/*--- Thread/Voice Active Indicators ---*/
+span[class*="live"],
+span[class*="live"] span,
+div[class*="activity"] span[class*="dot"] {
+  background-color: var(--color13) !important;
+  color: var(--eh-1) !important;
+}
+
+/*--- Inbox/Mentions Buttons ---*/
+div[class*="recents"] div[class*="badge"],
+div[class*="toolbar"] div[class*="badge"] {
+  background-color: var(--color13) !important;
+  color: var(--eh-1) !important;
+}
+
+/*--- Reaction Selected/Hover ---*/
+div[class*="reaction"]:hover,
+div[class*="reaction"][class*="reactionMe"] {
+  background: color-mix(in srgb, var(--color13) 20%, var(--eh-1)) !important;
+  border-color: var(--color13) !important;
+}
+
+/*--- Message Action Hover ---*/
+div[class*="message"] [class*="button"]:hover,
+div[class*="message"] [class*="icon"]:hover {
+  color: var(--color13) !important;
+}
+
+/*--- Selected Channel Text ---*/
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="name"],
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="name"] * {
+  color: var(--color13) !important;
+}
+
+/*--- Scrollbar Hover ---*/
+div[class*="scroller"]::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color13) !important;
+}
+
+/*--- Channel List Spine (Categories) ---*/
+#channels ul li svg.spine__5b40b,
+#channels ul li svg.spine__5b40b path,
+#channels ul li svg.invertedSpine__5b40b,
+#channels ul li svg.invertedSpine__5b40b path {
+  fill: var(--color13) !important;
+  color: var(--color13) !important;
+}
+
+/*--- Message Scroller Accent ---*/
+div[class*="messagesWrapper"] > div[class*="scroller"] {
+  --scrollbar-auto-thumb: var(--color13) !important;
+  --scrollbar-auto-track: color-mix(in srgb, var(--color13) 20%, transparent) !important;
+}
+
+/*--- Channel List Scrollbar ---*/
+div[class*="sidebar"] div[class*="scroller"] {
+  --scrollbar-auto-thumb: var(--color13) !important;
+  --scrollbar-auto-track: color-mix(in srgb, var(--color13) 20%, transparent) !important;
+  padding-bottom: calc(var(--custom-app-panels-height, 0px) + var(--eh-gap)) !important;
+}

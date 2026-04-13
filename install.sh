@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "Installing optional icons: Vivid-Glassy-Dark-Icons"
+cp -r Vivid-Glassy-Dark-Icons ~/.local/share/icons/
+echo "Installing optional Ghostty theme"
+mkdir -p ~/.config/ghostty/themes
+cp -r Ghostty-theme/andromeda ~/.config/ghostty/themes/
+echo "Installing optional waybar theme"
+mkdir -p ~/.config/waybar/themes/
+mkdir -p ~/.config/waybar/themes/andromeda
+cp -r waybar-theme/Andromeda ~/.config/waybar/thenes/
+echo "Attempting to apply waybar theme with wayflipper"
+echo "If you do not have wayflipper, you can get it here: https://github.com/OldJobobo/wayflipper"
+wayflipper Andromeda
+echo "Extras are installed. Re-apply theme, then run nwg-look to apply the GTK and Icon themes if they were not applied automatically."
