@@ -62,6 +62,31 @@ else
     if ask_yes_no "Would you like to open the Wayflipper installation page?"; then
         echo "Opening Wayflipper installation page..."
         open_browser "https://github.com/OldJobobo/wayflipper"  # Replace with actual URL
+    else
+        if ask_yes_no "Would you like to install the waybar theme without wayflipper?"; then
+            echo "Installing waybar theme without wayflipper..."
+            
+            # Backup existing waybar config
+            if [ -d "$HOME/.config/waybar" ]; then
+                BACKUP_DIR="$HOME/.config/waybar-$(date +%Y%m%d_%H%M%S)"
+                echo "Backing up existing waybar config to $BACKUP_DIR"
+                cp -r "$HOME/.config/waybar" "$BACKUP_DIR"
+            fi
+            
+            # Create waybar directory if it doesn't exist
+            mkdir -p "$HOME/.config/waybar"
+            
+            # Copy waybar theme files
+            echo "Copying waybar theme files..."
+            cp "waybar-theme/Andromeda/style.css" "$HOME/.config/waybar/"
+            cp "waybar-theme/Andromeda/config.jsonc" "$HOME/.config/waybar/"
+            cp "waybar-theme/Andromeda/window_pill.py" "$HOME/.config/waybar/"
+            
+            # Restart waybar
+            echo "Restarting waybar..."
+            omarchy-restart-waybar
+            echo "Waybar theme installation completed."
+        fi
     fi
     
     echo "Please re-run ./install.sh after installing Wayflipper."
