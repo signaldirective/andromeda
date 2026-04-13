@@ -62,6 +62,8 @@ else
     if ask_yes_no "Would you like to open the Wayflipper installation page?"; then
         echo "Opening Wayflipper installation page..."
         open_browser "https://github.com/OldJobobo/wayflipper"  # Replace with actual URL
+        echo "Please re-run ./install.sh after installing Wayflipper."
+        exit 0
     else
         if ask_yes_no "Would you like to install the waybar theme without wayflipper?"; then
             echo "Installing waybar theme without wayflipper..."
@@ -88,9 +90,6 @@ else
             echo "Waybar theme installation completed."
         fi
     fi
-    
-    echo "Please re-run ./install.sh after installing Wayflipper."
-    exit 0
 fi
 
 echo "=== Installation Complete ==="
